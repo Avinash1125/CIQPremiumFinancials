@@ -9,7 +9,10 @@ Universal Identifiers:
 companyId
 
 Primary Columns Used:
-companyId, GIC, segmentId, subTypeId
+companyId
+GIC
+segmentId
+subTypeId
 
 Database_Type:
 MSSQL
