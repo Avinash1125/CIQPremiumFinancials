@@ -2,7 +2,11 @@
 Returns SamE-Day Updates For Income Statement Data
 
 Packages Required:
-Finl Premium Core, Finl Premium Detail, Finl Premium Statement, Base Company, Base Foundation Company Daily
+FinlPremiumCore
+FinlPremiumDetail
+FinlPremiumStatement
+BaseCompany
+BaseFoundationCompanyDaily
 
 Universal Identifiers:
 companyId
