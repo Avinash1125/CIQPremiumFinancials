@@ -2,7 +2,9 @@
 Tev/ebitda Time Series
 
 Packages Required:
-Finl Premium Core, Finl Premium Detail, Market Capitalization
+FinlPremiumCore
+FinlPremiumDetail
+MarketCapitalization
 
 Universal Identifiers:
 companyId
