@@ -2,7 +2,8 @@
 Returns Gics Classifications For Segments
 
 Packages Required:
-Finl Premium Segment Profiles, Base Foundation Company
+FinlPremiumSegmentProfiles
+BaseFoundationCompany
 
 Universal Identifiers:
 companyId
