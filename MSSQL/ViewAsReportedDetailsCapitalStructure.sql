@@ -1,25 +1,14 @@
-/************************************************************************************************
-View as-reported details for a company’s debt capital structure
+/***********************************************************************************************
+Returns AS-Reported Details For A Company\\xe2\\x80\\x99s Debt Capital Structure
 
 Packages Required:
-Finl Premium Core
-Finl Premium Detail
-Finl Premium Statement
-Finl Premium Capital Structure
-Base Company
+Finl Premium Core, Finl Premium Detail, Finl Premium Statement, Finl Premium Capital Structure, Base Company
 
 Universal Identifiers:
 companyId
 
-Primmary Columns Used:
-capitalStructureSubTypeId
-componentId
-convertibleTypeId
-financialCollectionId
-financialInstanceId
-financialPeriodId
-levelTypeId
-securedTypeId
+Primary Columns Used:
+Primmary Columns Used:, capitalStructureSubTypeId, componentId, convertibleTypeId, financialCollectionId, financialInstanceId, financialPeriodId, levelTypeId, securedTypeId
 
 Database_Type:
 MSSQL
@@ -28,16 +17,15 @@ Query_Version:
 V1
 
 Query_Added_Date:
-25\05\2020
+25/05/2020
 
 DatasetKey:
 10
 
-The following sample SQL query demonstrates how to view as reported details for IBMs 
-FY 2009 debt capital structure.
-Note: This query is for the Debt Capital Structure Add-On delivered via a separate package.
+The following sample SQL query demonstrates how to view as reported details for IBMs  FY 2009 debt capital structure. Note: This query is for the Debt Capital Structure Add-On delivered via a separate package
 
 ***********************************************************************************************/
+
 
 SELECT DISTINCT
  c.capitalStructureDescription AS 'Description',
@@ -115,4 +103,3 @@ SELECT DISTINCT
  fp.fiscalYear
  
 ORDER BY c.componentID, filingDate, 1,2,3,4,5
- 
