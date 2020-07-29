@@ -10,7 +10,9 @@ Universal Identifiers:
 companyId
 
 Primary Columns Used:
-componentId, securityId, tradingItemId
+componentId
+securityId
+tradingItemId
 
 Database_Type:
 MSSQL
