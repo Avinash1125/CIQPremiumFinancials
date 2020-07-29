@@ -1,25 +1,14 @@
-/************************************************************************************************
-Retrieve company information by a different identifier
+/***********************************************************************************************
+Returns Company Information By A Different Identifier
 
 Packages Required:
-Finl Premium Core
-Finl Premium Detail
-Finl Premium Statement
-Financials Premium Intraday Core
-Base Company
-Base Company Foundation Daily
+Finl Premium Core, Finl Premium Detail, Finl Premium Statement, Financials Premium Intraday Core, Base Company, Base Company Foundation Daily
 
 Universal Identifiers:
-companyId
-GVKEY
+companyId, GVKEY
 
 Primary Columns Used:
-dataItemId
-financialCollectionId
-financialInstanceId
-financialPeriodId
-periodTypeId
-restatementTypeId
+dataItemId, financialCollectionId, financialInstanceId, financialPeriodId, periodTypeId, restatementTypeId
 
 Database_Type:
 MSSQL
@@ -28,16 +17,15 @@ Query_Version:
 V1
 
 Query_Added_Date:
-25\05\2020
+25/05/2020
 
 DatasetKey:
 10
 
-The following sample SQL query demonstrates how to use the ciqSymbol table to retrieve company 
-information by a different identifier. The sample query below retrieves company 
-information for Sony Corporation (GVKEY 009818).
+The following sample SQL query demonstrates how to use the ciqSymbol table to retrieve company  information by a different identifier. The sample query below retrieves company  information for Sony Corporation (GVKEY 009818)
 
 ***********************************************************************************************/
+
 
 SELECT c.CompanyName, fp.companyID,fp.calendarYear, fp.calendarQuarter,fp.fiscalYear,fp.fiscalQuarter,pt.PeriodTypeName, fi.filingDate,rt.restatementTypeName, fcd.dataItemID,fcd.dataItemValue
 
@@ -58,5 +46,4 @@ AND sy.symboltypeid =  '13'  --SymbolTypeID for GVKEY symbols
 AND sy.symbolvalue = '6821506' --GVKEY for Sony
 
 ORDER BY fp.fiscalYear DESC, fp.fiscalQuarter
- 
  
