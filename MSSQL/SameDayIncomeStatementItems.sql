@@ -12,7 +12,10 @@ Universal Identifiers:
 companyId
 
 Primary Columns Used:
-dataItemId, financialCollectionId, financialInstanceId, financialPeriodId
+dataItemId
+financialCollectionId
+financialInstanceId
+financialPeriodId
 
 Database_Type:
 MSSQL
