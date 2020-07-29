@@ -60,4 +60,3 @@ AND e.exchangeSymbol = 'TSE'
 AND ti.tickerSymbol = '7267' --Honda Motor Company
 AND fi.periodEndDate = '3/31/2007'  
 ORDER BY fi.filingDate
-"
