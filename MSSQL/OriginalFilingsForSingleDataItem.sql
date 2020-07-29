@@ -2,7 +2,9 @@
 Returns The Original Filings For A Single Data Item
 
 Packages Required:
-Finl Premium Core, Finl Premium Detail, Finl Premium Statement
+FinlPremiumCore
+FinlPremiumDetail
+FinlPremiumStatement
 
 Universal Identifiers:
 companyId
