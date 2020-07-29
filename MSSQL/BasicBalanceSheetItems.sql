@@ -1,30 +1,14 @@
-/************************************************************************************************
-View basic balance sheet items
+/***********************************************************************************************
+Returns Basic Balance Sheet Items
 
 Packages Required:
-Finl Premium Core
-Finl Premium Detail
-Finl Premium Statement
-Base Company
-Base Data Item Master
-Base Equity Security
-Base Foundation Company Daily
-Base Security
+Finl Premium Core, Finl Premium Detail, Finl Premium Statement, Base Company, Base Data Item Master, Base Equity Security, Base Foundation Company Daily, Base Security
 
 Universal Identifiers:
-companyId
-tradingItemId
-securityId
+companyId, tradingItemId, securityId
 
 Primary Columns Used:
-companyid
-securityId
-tradingItemId
-dataItemId
-financialCollectionId
-financialInstanceId
-financialPeriodId
-periodTypeId
+companyid, securityId, tradingItemId, dataItemId, financialCollectionId, financialInstanceId, financialPeriodId, periodTypeId
 
 Database_Type:
 MSSQL
@@ -33,15 +17,15 @@ Query_Version:
 V1
 
 Query_Added_Date:
-25\05\2020
+25/05/2020
 
 DatasetKey:
 10
 
-The following sample SQL query displays basic balance sheet items for a single company for 
-the most recent four quarterly periods.
+The following sample SQL query displays basic balance sheet items for a single company for  the most recent four quarterly periods
 
 ***********************************************************************************************/
+
 
 SELECT c.companyName
 , c.companyId
@@ -71,16 +55,16 @@ JOIN ciqFinCollection fc ON fc.financialCollectionId = ic.financialCollectionId
 JOIN ciqFinCollectionData fd ON fd.financialCollectionId = fc.financialCollectionId
 JOIN ciqDataItem di ON di.dataItemId = fd.dataItemId
 JOIN (SELECT DISTINCT top 4(fi.periodEndDate) AS --Most recent 4 periods
-	periodEndDate,fp.companyId,ti.tickerSymbol
-	FROM ciqFinInstance fi
-	JOIN ciqFinPeriod fp ON fi.financialPeriodId = fp.financialPeriodId
-	JOIN ciqCompany c ON fp.companyId = c.companyId
-	JOIN ciqSecurity s ON c.companyId = s.companyId
-	JOIN ciqTradingItem ti ON ti.securityId = s.securityId
-	JOIN ciqExchange e ON e.exchangeId = ti.exchangeId
-	WHERE e.exchangeSymbol = 'NasdaqGS'
-	AND ti.tickerSymbol = 'AMGN' --Amgen Inc.
-	ORDER BY fi.periodEndDate DESC) pe ON pe.periodEndDate = fi.periodEndDate
+        periodEndDate,fp.companyId,ti.tickerSymbol
+        FROM ciqFinInstance fi
+        JOIN ciqFinPeriod fp ON fi.financialPeriodId = fp.financialPeriodId
+        JOIN ciqCompany c ON fp.companyId = c.companyId
+        JOIN ciqSecurity s ON c.companyId = s.companyId
+        JOIN ciqTradingItem ti ON ti.securityId = s.securityId
+        JOIN ciqExchange e ON e.exchangeId = ti.exchangeId
+        WHERE e.exchangeSymbol = 'NasdaqGS'
+        AND ti.tickerSymbol = 'AMGN' --Amgen Inc.
+        ORDER BY fi.periodEndDate DESC) pe ON pe.periodEndDate = fi.periodEndDate
 WHERE fd.dataItemId IN (1002, 1001, 1008, 1004, 1007, 1009, 1276, 1006, 1275, 1013, 106) --Balance Sheet Items 
 AND fp.periodTypeId = 2 --Quarterly
 AND e.exchangeSymbol = 'NasdaqGS'
