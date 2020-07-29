@@ -1,27 +1,14 @@
-/************************************************************************************************
-View basic income statement items
+/***********************************************************************************************
+Returns Basic Income Statement Items
 
 Packages Required:
-Finl Premium Core
-Finl Premium Detail
-Finl Premium Statement
-Base Company
-Base Data Item Master
-Base Equity Security
-Base Foundation Company Daily
-Base Security
+Finl Premium Core, Finl Premium Detail, Finl Premium Statement, Base Company, Base Data Item Master, Base Equity Security, Base Foundation Company Daily, Base Security
 
 Universal Identifiers:
-companyId
-tradingItemId
-securityId
+companyId, tradingItemId, securityId
 
 Primary Columns Used:
-dataItemId
-financialCollectionId
-financialInstanceId
-financialPeriodId
-periodTypeId
+dataItemId, financialCollectionId, financialInstanceId, financialPeriodId, periodTypeId
 
 Database_Type:
 MSSQL
@@ -30,15 +17,15 @@ Query_Version:
 V1
 
 Query_Added_Date:
-25\05\2020
+25/05/2020
 
 DatasetKey:
 10
 
-The following sample SQL query displays basic income statement items for a single company as 
-of a specific period end date for original and all restatement filings.
+The following sample SQL query displays basic income statement items for a single company as  of a specific period end date for original and all restatement filings
 
 ***********************************************************************************************/
+
 
 SELECT DISTINCT c.companyName, c.companyId, ti.tickerSymbol, e.exchangeSymbol,fi.periodEndDate,fi.filingDate, pt.periodTypeName, fp.calendarYear,fd.dataItemId,di.dataItemName,fd.dataItemValue
 FROM ciqCompany c JOIN ciqSecurity s ON c.companyId = s.companyId
@@ -57,4 +44,3 @@ AND e.exchangeSymbol = 'SWX'
 AND ti.tickerSymbol = 'CSGN' --Credit Suisse Group
 AND fi.periodEndDate = '12/31/2007' 
 ORDER BY c.companyName,di.dataItemName,fi.filingDate
- 
