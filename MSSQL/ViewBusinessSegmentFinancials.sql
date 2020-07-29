@@ -1,27 +1,14 @@
-/************************************************************************************************
-View all business segment financials for a company
+/***********************************************************************************************
+Returns All Business Segment Fundamentals For A Company
 
 Packages Required:
-Finl Premium Core
-Finl Premium Detail
-Finl Premium Statement
-Finl Premium Segment Financials
-Base Company
-Base Data Item Master
-Base Foundation Company Daily
+Finl Premium Core, Finl Premium Detail, Finl Premium Statement, Finl Premium Segment Financials, Base Company, Base Data Item Master, Base Foundation Company Daily
 
 Universal Identifiers:
 companyId
 
 Primary Columns Used:
-comapnyId
-dataItemId
-financialCollectionId
-financialInstanceId
-financialPeriodId
-segmentId
-segmentTypeId
-subTotalDataItemId
+comapnyId, dataItemId, financialCollectionId, financialInstanceId, financialPeriodId, segmentId, segmentTypeId, subTotalDataItemId
 
 Database_Type:
 MSSQL
@@ -30,18 +17,15 @@ Query_Version:
 V1
 
 Query_Added_Date:
-25\05\2020
+25/05/2020
 
 DatasetKey:
 10
 
-The following sample SQL query demonstrates how to view the latest annual business segment 
-financials for International Business Machines Corp. (in the reported currency).
-Note: This sample query includes data from all Segment Add-On packages: the Segment Financial 
-Data Add-On package (loads into ciqFinCollectionData table), the Segment Financials Add-On, 
-and the Segment Profiles Add-On.
+The following sample SQL query demonstrates how to view the latest annual business segment  financials for International Business Machines Corp. (in the reported currency). Note: This sample query includes data from all Segment Add-On packages: the Segment Financial  Data Add-On package (loads into ciqFinCollectionData table), the Segment Financials Add-On,  and the Segment Profiles Add-On
 
 ***********************************************************************************************/
+
 
 SELECT c.companyName
 , st.segmentTypeDescription
@@ -85,4 +69,3 @@ AND cfp.latestPeriodFlag = '1' --Most recent period
 AND cfi.latestForFinancialPeriodFlag = '1' --Latest instance
 
 ORDER BY di2.dataItemName, s.segmentName
- 
