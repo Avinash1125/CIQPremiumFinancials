@@ -2,7 +2,11 @@
 Returns AS-Reported Details For A Company\\xe2\\x80\\x99s Debt Capital Structure
 
 Packages Required:
-Finl Premium Core, Finl Premium Detail, Finl Premium Statement, Finl Premium Capital Structure, Base Company
+FinlPremiumCore
+FinlPremiumDetail
+FinlPremiumStatement
+FinlPremiumCapitalStructure
+BaseCompany
 
 Universal Identifiers:
 companyId
