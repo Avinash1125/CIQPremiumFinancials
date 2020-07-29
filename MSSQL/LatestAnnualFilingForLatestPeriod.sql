@@ -1,26 +1,14 @@
-/************************************************************************************************
-Latest Annual Filing for Latest Period
+/***********************************************************************************************
+Latest Annual Filing For Latest Period
 
 Packages Required:
-Finl Premium Core
-Finl Premium Statement
-Base Company
-Base Data Item Master
-Base Equity Security
-Base Foundation Company Daily
-Base Security
+Finl Premium Core, Finl Premium Statement, Base Company, Base Data Item Master, Base Equity Security, Base Foundation Company Daily, Base Security
 
 Universal Identifiers:
-companyId
-tradingItemId
-securityId
+companyId, tradingItemId, securityId
 
 Primary Columns Used:
-dataItemId
-financialCollectionId
-financialInstanceId
-financialPeriodId
-periodTypeId
+dataItemId, financialCollectionId, financialInstanceId, financialPeriodId, periodTypeId
 
 Database_Type:
 MSSQL
@@ -29,14 +17,15 @@ Query_Version:
 V1
 
 Query_Added_Date:
-25\05\2020
+25/05/2020
 
 DatasetKey:
 10
 
-The following sample SQL queries display latest Annual Filing for a company for current period.
+The following sample SQL queries display latest Annual Filing for a company for current period
 
 ***********************************************************************************************/
+
 
 SELECT c.companyName, c.companyId, ti.tickerSymbol,e.exchangeSymbol, fi.periodEndDate,fi.filingDate,pt.periodTypeName,fp.calendarQuarter, fp.calendarYear,fd.dataItemId,di.dataItemName,fd.dataItemValue
 FROM ciqCompany c
@@ -50,6 +39,7 @@ join ciqFinInstanceToCollection ic on ic.financialInstanceId = fi.financialInsta
 join ciqFinCollection fc on fc.financialCollectionId = ic.financialCollectionId
 join ciqFinCollectionData fd on fd.financialCollectionId = ic.financialCollectionId
 join ciqDataItem di on di.dataItemId = fd.dataItemId
+
 WHERE fd.dataItemId in (28, 29, 1, 364, 2, 376, 10, 367, 19, 20, 15)
 AND fp.periodTypeId = 1 --Annual
 AND e.exchangeSymbol = 'SWX'
