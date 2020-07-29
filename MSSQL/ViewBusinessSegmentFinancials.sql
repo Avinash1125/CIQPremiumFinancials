@@ -2,7 +2,13 @@
 Returns All Business Segment Fundamentals For A Company
 
 Packages Required:
-Finl Premium Core, Finl Premium Detail, Finl Premium Statement, Finl Premium Segment Financials, Base Company, Base Data Item Master, Base Foundation Company Daily
+FinlPremiumCore
+FinlPremiumDetail
+FinlPremiumStatement
+FinlPremiumSegmentFinancials
+BaseCompany
+BaseDataItemMaster
+BaseFoundationCompanyDaily
 
 Universal Identifiers:
 companyId
