@@ -1,21 +1,14 @@
-/************************************************************************************************
-Identify same-day updates for income statement data
+/***********************************************************************************************
+Returns SamE-Day Updates For Income Statement Data
 
 Packages Required:
-Finl Premium Core
-Finl Premium Detail
-Finl Premium Statement
-Base Company
-Base Foundation Company Daily
+Finl Premium Core, Finl Premium Detail, Finl Premium Statement, Base Company, Base Foundation Company Daily
 
 Universal Identifiers:
 companyId
 
 Primary Columns Used:
-dataItemId
-financialCollectionId
-financialInstanceId
-financialPeriodId
+dataItemId, financialCollectionId, financialInstanceId, financialPeriodId
 
 Database_Type:
 MSSQL
@@ -24,15 +17,15 @@ Query_Version:
 V1
 
 Query_Added_Date:
-25\05\2020
+25/05/2020
 
 DatasetKey:
 10
 
-The following sample SQL query pulls all S and P Capital IQ same day income statement 
-data for the first quarter of 2012
+The following sample SQL query pulls all S&P Capital IQ same day income statement  data for the first quarter of 2012
 
 ***********************************************************************************************/
+
 
 SELECT c.companyid
 ,c.companyname
@@ -66,4 +59,3 @@ AND fp.calendarQuarter = 1
 AND fc.dataCollectionTypeId = 1 --income statement
 AND fp.periodTypeId = 2 --quarterly
 ORDER BY c.companyName, fi.periodEndDate, fi.filingDate, fcd.dataItemId
- 
