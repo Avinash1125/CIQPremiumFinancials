@@ -1,5 +1,6 @@
 /************************************************************************************************
 View the sources, values and filing dates
+
 Packages Required:
 Finl Premium Core
 Finl Premium Detail
@@ -9,26 +10,34 @@ Base Data Item Master
 Base Equity Security
 Base Foundation Company Daily
 Base Security
+
 Universal Identifiers:
 companyId
 tradingItemId
 securityId
+
 Primary Columns used:
 dataItemId
 financialCollectionId
 financialInstanceId
 financialPeriodId
 periodTypeId
+
 Database_Type:
 MSSQL
+
 Query_Version:
 V1
+
 Query_Added_Date:
 25\05\2020
+
 DatasetKey:
 10
+
 The following sample SQL query displays the sources, values and filing dates for a specific 
 company and data item as of a specific period end date.
+
 ***********************************************************************************************/
 
 SELECT c.companyName
