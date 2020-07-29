@@ -2,7 +2,11 @@
 Ciq Premium Fundamentals Pivot
 
 Packages Required:
-FinlPremiumCore*/#FinlPremiumDetail*/#BaseCompany*/#BaseDataItemMaster*/#BaseFoundationCompanyDaily
+FinlPremiumCore
+FinlPremiumDetail
+BaseCompany
+BaseDataItemMaster
+BaseFoundationCompanyDaily
 
 Universal Identifiers:
 companyId
