@@ -1,18 +1,14 @@
-/************************************************************************************************
-Display multiple instances for one period
+/***********************************************************************************************
+Returns Multiple Instances For One Period
 
 Packages Required:
-Finl Premium Core
-Finl Premium Detail
-Finl Premium Statement
+Finl Premium Core, Finl Premium Detail, Finl Premium Statement
 
 Universal Identifiers:
 companyId
 
 Primary Columns Used:
-financialInstanceId
-financialPeriodId
-periodTypeId
+financialInstanceId, financialPeriodId, periodTypeId
 
 Database_Type:
 MSSQL
@@ -21,14 +17,15 @@ Query_Version:
 V1
 
 Query_Added_Date:
-25\05\2020
+25/05/2020
 
 DatasetKey:
 10
 
-The following sample SQL queries display multiple instances for one period for a single company.
+The following sample SQL queries display multiple instances for one period for a single company
 
 ***********************************************************************************************/
+
 
 SELECT fp.financialPeriodID
 ,fp.calendarYear
