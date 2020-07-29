@@ -1,28 +1,14 @@
-/************************************************************************************************
-Display reported currency and convert to target currency
+/***********************************************************************************************
+Returns Reported Currency And Convert To Target Currency
 
 Packages Required:
-Finl Premium Core
-Finl Premium Detail
-Finl Premium Statement
-Base Company
-Base Data Item Master
-Base Equity Security
-Base Exchange Rates
-Base Foundation Company Daily
-Base Security
+Finl Premium Core, Finl Premium Detail, Finl Premium Statement, Base Company, Base Data Item Master, Base Equity Security, Base Exchange Rates, Base Foundation Company Daily, Base Security
 
 Universal Identifiers:
-companyId
-tradingItemId
-securityId
+companyId, tradingItemId, securityId
 
-Primary Columns used:
-dataItemId
-financialCollectionId
-financialInstanceId
-financialPeriodId
-periodTypeId
+Primary Columns Used:
+Primary Columns used:, dataItemId, financialCollectionId, financialInstanceId, financialPeriodId, periodTypeId
 
 Database_Type:
 MSSQL
@@ -31,15 +17,15 @@ Query_Version:
 V1
 
 Query_Added_Date:
-25\05\2020
+25/05/2020
 
 DatasetKey:
 10
 
-The following sample SQL queries display the currency in which financials were reported 
-and convert the data to a target currency.
+The following sample SQL queries display the currency in which financials were reported  and convert the data to a target currency
 
 ***********************************************************************************************/
+
 
 SELECT c.companyName, c.companyId, ti.tickerSymbol, e.exchangeSymbol, co.country,cu.currencyName,fi.periodEndDate,pt.periodTypeName, fp.calendarQuarter,fp.calendarYear,fi.filingDate,fd.dataItemId,di.dataItemName, fd.dataItemValue, (fd.dataItemValue*cex2.priceClose)/cex.priceClose AS DataItemValue_GBP
 FROM ciqCompany c JOIN ciqSecurity s ON c.companyId = s.companyId
@@ -64,4 +50,3 @@ AND e.exchangeSymbol = 'DB'
 AND fi.periodEndDate = '12/31/2007' 
 AND cu2.currencyName LIKE 'British Pound%' --Target Currency
 ORDER BY c.companyName,di.dataItemName
- 
