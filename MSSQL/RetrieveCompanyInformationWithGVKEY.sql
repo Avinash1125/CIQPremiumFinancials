@@ -2,7 +2,12 @@
 Returns Company Information By A Different Identifier
 
 Packages Required:
-Finl Premium Core, Finl Premium Detail, Finl Premium Statement, Financials Premium Intraday Core, Base Company, Base Company Foundation Daily
+FinlPremiumCore
+FinlPremiumDetail
+FinlPremiumStatement
+FinancialsPremiumIntradayCore
+BaseCompany
+BaseCompanyFoundationDaily
 
 Universal Identifiers:
 companyId, GVKEY
