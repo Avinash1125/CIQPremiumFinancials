@@ -1,27 +1,14 @@
-/************************************************************************************************
-Build a time series using filing dates
+/***********************************************************************************************
+Returns A Time Series Using Filing Dates
 
 Packages Required:
-Finl Premium Core
-Finl Premium Detail
-Finl Premium Statement
-Base Company
-Base Data Item Master
-Base Equity Security
-Base Foundation Company Daily
-Base Security
+Finl Premium Core, Finl Premium Detail, Finl Premium Statement, Base Company, Base Data Item Master, Base Equity Security, Base Foundation Company Daily, Base Security
 
 Universal Identifiers:
-companyId
-tradingItemId
-securityId
+companyId, tradingItemId, securityId
 
 Primary Columns Used:
-dataItemId
-financialCollectionId
-financialInstanceId
-financialPeriodId
-periodTypeId
+dataItemId, financialCollectionId, financialInstanceId, financialPeriodId, periodTypeId
 
 Database_Type:
 MSSQL
@@ -30,16 +17,15 @@ Query_Version:
 V1
 
 Query_Added_Date:
-25\05\2020
+25/05/2020
 
 DatasetKey:
 10
 
-The following example demonstrates how to build a time series using filing dates. The sample 
-query below retrieves one data item, quarterly cost of goods sold, for Anadarko Petroleum 
-Corp (GVKEY 011923) that will be presented in a time series.
+The following example demonstrates how to build a time series using filing dates. The sample  query below retrieves one data item, quarterly cost of goods sold, for Anadarko Petroleum  Corp (GVKEY 011923) that is presented in a time series
 
 ***********************************************************************************************/
+
 
 DECLARE @obsdate AS datetime
 SET @obsdate = '2003-4-15' --Setting your observation DATE
@@ -71,4 +57,3 @@ AND ti.tickerSymbol = 'APC' --Anadarko Petroleum Corp.
 AND e.exchangeSymbol = 'NYSE'
 
 ORDER BY fi.periodEndDate, fi.filingDate
- 
