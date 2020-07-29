@@ -2,7 +2,9 @@
 Returns Multiple Instances For One Period(annual)
 
 Packages Required:
-Finl Premium Core, Finl Premium Detail, Finl Premium Statement
+FinlPremiumCore
+FinlPremiumDetail
+FinlPremiumStatement
 
 Universal Identifiers:
 companyId, tradingItemId, securityId
