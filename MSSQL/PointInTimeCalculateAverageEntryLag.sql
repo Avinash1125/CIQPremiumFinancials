@@ -1,20 +1,14 @@
-/************************************************************************************************
-Point-in-time sample query which calculates the average lag for US companies
+/***********************************************************************************************
+PoinT-IN-Time Sample Query Which Returnss The Average Lag For Us Companies
 
 Packages Required:
-Financial Premium Intraday Core
-Finl Latest Core
-Finl Premium Core
-Base Company
-Base Foundation Company Daily
+Financial Premium Intraday Core, Finl Latest Core, Finl Premium Core, Base Company, Base Foundation Company Daily
 
 Universal Identifiers:
 companyId
 
 Primary Columns Used:
-financialInstanceId
-financialPeriodId
-restatementTypeId
+financialInstanceId, financialPeriodId, restatementTypeId
 
 Database_Type:
 MSSQL
@@ -23,16 +17,15 @@ Query_Version:
 V1
 
 Query_Added_Date:
-25\05\2020
+25/05/2020
 
 DatasetKey:
 10
 
-The following sample SQL query uses the Premium Financials Instance Date package to calculate
-the average lag for US companies, based on the restatement and form types. The query limits 
-the universe to US, Original 10-Q collection for post 2009 records.
+The following sample SQL query uses the Premium Financials Instance Date package to calculate the average lag for US companies, based on the restatement and form types. The query limits  the universe to US, Original 10-Q collection for post 2009 records
 
 ***********************************************************************************************/
+
 
 WITH PIT AS
 (
@@ -59,4 +52,3 @@ datepart(YEAR,CAST(b.periodEndDate AS DATE)) >= 2009
 
 GROUP BY datepart(YEAR,CAST(b.periodEndDate AS DATE)),b.formType,rt.restatementTypeName
 ORDER BY 2,1 DESC
- 
