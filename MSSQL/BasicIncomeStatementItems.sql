@@ -2,7 +2,14 @@
 Returns Basic Income Statement Items
 
 Packages Required:
-FinlPremiumCore*/#FinlPremiumDetail*/#FinlPremiumStatement*/#BaseCompany*/#BaseDataItemMaster*/#BaseEquitySecurity*/#BaseFoundationCompanyDaily*/#BaseSecurity
+FinlPremiumCore
+FinlPremiumDetail
+FinlPremiumStatement
+BaseCompany
+BaseDataItemMaster
+BaseEquitySecurity
+BaseFoundationCompanyDaily
+BaseSecurity
 
 Universal Identifiers:
 companyId, tradingItemId, securityId
