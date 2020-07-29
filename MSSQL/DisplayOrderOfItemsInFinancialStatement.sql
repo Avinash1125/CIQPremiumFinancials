@@ -2,7 +2,11 @@
 Returns The Order Of Items In A Financial Statement
 
 Packages Required:
-Finl Premium Core, Finl Premium Detail, Finl Premium Statement, Finl Premium Segment Financials, Base Data Item Master
+FinlPremiumCore
+FinlPremiumDetail
+FinlPremiumStatement
+FinlPremiumSegmentFinancials
+BaseDataItemMaster
 
 Universal Identifiers:
 companyId
