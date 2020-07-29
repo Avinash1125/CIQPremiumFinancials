@@ -1,1 +1,66 @@
-("/***********************************************************************************************\nView the sources, values and filing dates\n\nPackages Required:\nFinl Premium Core, Finl Premium Detail, Finl Premium Statement, Base Company, Base Data Item Master, Base Equity Security, Base Foundation Company Daily, Base Security\n\nUniversal Identifiers:\ncompanyId, tradingItemId, securityId\n\nPrimary Columns Used:\nPrimary Columns used:, dataItemId, financialCollectionId, financialInstanceId, financialPeriodId, periodTypeId\n\nDatabase_Type:\nMSSQL\n\nQuery_Version:\nV1\n\nQuery_Added_Date:\n25/05/2020\n\nDatasetKey:\n10\n\nThe following sample SQL query displays the sources, values and filing dates for a specific company and data item as of a specific period end date.\n\n***********************************************************************************************/\n\n\nSELECT c.companyName\n,c.companyId\n,ti.tickerSymbol\n,e.exchangeSymbol\n,co.country\n,fi.filingDate,\nfi.formType\n,fi.periodEndDate\n,pt.periodTypeName\n,fp.calendarQuarter\n,fp.calendarYear\n,fd.dataItemId\n,di.dataItemName\n,fd.dataItemValue\n\nFROM ciqCompany c JOIN ciqSecurity s ON c.companyId = s.companyId\nJOIN ciqTradingItem ti ON ti.securityId = s.securityId\nJOIN ciqExchange e ON e.exchangeId = ti.exchangeId\nJOIN ciqCountryGeo co ON co.countryId = c.countryId\nJOIN ciqFinPeriod fp ON fp.companyId = c.companyId\nJOIN ciqPeriodType pt ON pt.periodTypeId = fp.periodTypeId\nJOIN ciqFinInstance fi ON fi.financialPeriodId = fp.financialPeriodId\nJOIN ciqFinInstanceToCollection ic ON ic.financialInstanceId = fi.financialInstanceId \nJOIN ciqFinCollection fc ON fc.financialCollectionId = ic.financialCollectionId\nJOIN ciqFinCollectionData fd ON fd.financialCollectionId = fc.financialCollectionId\nJOIN ciqDataItem di ON di.dataItemId = fd.dataItemId\nWHERE 1=1 \nAND fd.dataItemId = 15 --Net Income (IS)\nAND fp.periodTypeId = 1 --Annual\nAND e.exchangeSymbol = 'TSE' \nAND ti.tickerSymbol = '7267' --Honda Motor Company\nAND fi.periodEndDate = '3/31/2007'  \nORDER BY fi.filingDate\n", )"/***********************************************************************************************\nView the sources, values and filing dates\n\nPackages Required:\nFinl Premium Core, Finl Premium Detail, Finl Premium Statement, Base Company, Base Data Item Master, Base Equity Security, Base Foundation Company Daily, Base Security\n\nUniversal Identifiers:\ncompanyId, tradingItemId, securityId\n\nPrimary Columns Used:\nPrimary Columns used:, dataItemId, financialCollectionId, financialInstanceId, financialPeriodId, periodTypeId\n\nDatabase_Type:\nMSSQL\n\nQuery_Version:\nV1\n\nQuery_Added_Date:\n25/05/2020\n\nDatasetKey:\n10\n\nThe following sample SQL query displays the sources, values and filing dates for a specific company and data item as of a specific period end date.\n\n***********************************************************************************************/\n\n\nSELECT c.companyName\n,c.companyId\n,ti.tickerSymbol\n,e.exchangeSymbol\n,co.country\n,fi.filingDate,\nfi.formType\n,fi.periodEndDate\n,pt.periodTypeName\n,fp.calendarQuarter\n,fp.calendarYear\n,fd.dataItemId\n,di.dataItemName\n,fd.dataItemValue\n\nFROM ciqCompany c JOIN ciqSecurity s ON c.companyId = s.companyId\nJOIN ciqTradingItem ti ON ti.securityId = s.securityId\nJOIN ciqExchange e ON e.exchangeId = ti.exchangeId\nJOIN ciqCountryGeo co ON co.countryId = c.countryId\nJOIN ciqFinPeriod fp ON fp.companyId = c.companyId\nJOIN ciqPeriodType pt ON pt.periodTypeId = fp.periodTypeId\nJOIN ciqFinInstance fi ON fi.financialPeriodId = fp.financialPeriodId\nJOIN ciqFinInstanceToCollection ic ON ic.financialInstanceId = fi.financialInstanceId \nJOIN ciqFinCollection fc ON fc.financialCollectionId = ic.financialCollectionId\nJOIN ciqFinCollectionData fd ON fd.financialCollectionId = fc.financialCollectionId\nJOIN ciqDataItem di ON di.dataItemId = fd.dataItemId\nWHERE 1=1 \nAND fd.dataItemId = 15 --Net Income (IS)\nAND fp.periodTypeId = 1 --Annual\nAND e.exchangeSymbol = 'TSE' \nAND ti.tickerSymbol = '7267' --Honda Motor Company\nAND fi.periodEndDate = '3/31/2007'  \nORDER BY fi.filingDate\n", )
+/************************************************************************************************
+View the sources, values and filing dates
+Packages Required:
+Finl Premium Core
+Finl Premium Detail
+Finl Premium Statement
+Base Company
+Base Data Item Master
+Base Equity Security
+Base Foundation Company Daily
+Base Security
+Universal Identifiers:
+companyId
+tradingItemId
+securityId
+Primary Columns used:
+dataItemId
+financialCollectionId
+financialInstanceId
+financialPeriodId
+periodTypeId
+Database_Type:
+MSSQL
+Query_Version:
+V1
+Query_Added_Date:
+25\05\2020
+DatasetKey:
+10
+The following sample SQL query displays the sources, values and filing dates for a specific 
+company and data item as of a specific period end date.
+***********************************************************************************************/
+
+SELECT c.companyName
+,c.companyId
+,ti.tickerSymbol
+,e.exchangeSymbol
+,co.country
+,fi.filingDate,
+fi.formType
+,fi.periodEndDate
+,pt.periodTypeName
+,fp.calendarQuarter
+,fp.calendarYear
+,fd.dataItemId
+,di.dataItemName
+,fd.dataItemValue
+
+FROM ciqCompany c JOIN ciqSecurity s ON c.companyId = s.companyId
+JOIN ciqTradingItem ti ON ti.securityId = s.securityId
+JOIN ciqExchange e ON e.exchangeId = ti.exchangeId
+JOIN ciqCountryGeo co ON co.countryId = c.countryId
+JOIN ciqFinPeriod fp ON fp.companyId = c.companyId
+JOIN ciqPeriodType pt ON pt.periodTypeId = fp.periodTypeId
+JOIN ciqFinInstance fi ON fi.financialPeriodId = fp.financialPeriodId
+JOIN ciqFinInstanceToCollection ic ON ic.financialInstanceId = fi.financialInstanceId 
+JOIN ciqFinCollection fc ON fc.financialCollectionId = ic.financialCollectionId
+JOIN ciqFinCollectionData fd ON fd.financialCollectionId = fc.financialCollectionId
+JOIN ciqDataItem di ON di.dataItemId = fd.dataItemId
+WHERE 1=1 
+AND fd.dataItemId = 15 --Net Income (IS)
+AND fp.periodTypeId = 1 --Annual
+AND e.exchangeSymbol = 'TSE' 
+AND ti.tickerSymbol = '7267' --Honda Motor Company
+AND fi.periodEndDate = '3/31/2007'  
+ORDER BY fi.filingDate
