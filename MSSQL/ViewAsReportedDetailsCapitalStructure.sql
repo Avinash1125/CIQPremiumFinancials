@@ -12,7 +12,15 @@ Universal Identifiers:
 companyId
 
 Primary Columns Used:
-Primmary Columns Used:, capitalStructureSubTypeId, componentId, convertibleTypeId, financialCollectionId, financialInstanceId, financialPeriodId, levelTypeId, securedTypeId
+PrimmaryColumnsUsed:
+capitalStructureSubTypeId
+componentId
+convertibleTypeId
+financialCollectionId
+financialInstanceId
+financialPeriodId
+levelTypeId
+securedTypeId
 
 Database_Type:
 MSSQL
