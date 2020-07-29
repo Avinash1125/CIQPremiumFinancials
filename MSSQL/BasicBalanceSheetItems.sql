@@ -2,7 +2,14 @@
 Returns Basic Balance Sheet Items
 
 Packages Required:
-Finl Premium Core, Finl Premium Detail, Finl Premium Statement, Base Company, Base Data Item Master, Base Equity Security, Base Foundation Company Daily, Base Security
+FinlPremiumCore
+FinlPremiumDetail
+FinlPremiumStatement
+BaseCompany
+BaseDataItemMaster
+BaseEquitySecurity
+BaseFoundationCompanyDaily
+BaseSecurity
 
 Universal Identifiers:
 companyId, tradingItemId, securityId
