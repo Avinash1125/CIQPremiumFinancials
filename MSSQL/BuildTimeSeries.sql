@@ -1,27 +1,14 @@
-/************************************************************************************************
-Build a time series
+/***********************************************************************************************
+Returns A Time Series
 
 Packages Required:
-Finl Premium Core
-Finl Premium Detail
-Finl Premium Statement
-Base Company
-Base Data Item Master
-Base Equity Security
-Base Foundation Company Daily
-Base Security
+Finl Premium Core, Finl Premium Detail, Finl Premium Statement, Base Company, Base Data Item Master, Base Equity Security, Base Foundation Company Daily, Base Security
 
 Universal Identifiers:
-companyId
-tradingItemId
-securityId
+companyId, tradingItemId, securityId
 
 Primary Columns Used:
-dataItemId
-financialCollectionId
-financialInstanceId
-financialPeriodId
-periodTypeId
+dataItemId, financialCollectionId, financialInstanceId, financialPeriodId, periodTypeId
 
 Database_Type:
 MSSQL
@@ -30,15 +17,15 @@ Query_Version:
 V1
 
 Query_Added_Date:
-25\05\2020
+25/05/2020
 
 DatasetKey:
 10
 
-The following sample query below retrieves one data item, quarterly total revenue, 
-for Abbott Laboratories (Ticker ABT) that will be presented in a time series.
+The following sample query below retrieves one data item, quarterly total revenue,  for Abbott Laboratories (Ticker ABT) that is presented in a time series
 
 ***********************************************************************************************/
+
 
 SELECT c.companyName, c.companyId, ti.tickerSymbol, e.exchangeSymbol,
 fi.periodEndDate,fi.filingDate,pt.periodTypeName,fp.calendarQuarter,
@@ -62,5 +49,4 @@ AND e.exchangeSymbol = 'NYSE'
 AND fi.latestForFinancialPeriodFlag = 1
 
 ORDER BY fi.periodEndDate,fi.filingDate
- 
  
