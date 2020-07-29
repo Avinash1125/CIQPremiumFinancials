@@ -2,7 +2,15 @@
 Returns Reported Currency And Convert To Target Currency
 
 Packages Required:
-Finl Premium Core, Finl Premium Detail, Finl Premium Statement, Base Company, Base Data Item Master, Base Equity Security, Base Exchange Rates, Base Foundation Company Daily, Base Security
+FinlPremiumCore
+FinlPremiumDetail
+FinlPremiumStatement
+BaseCompany
+BaseDataItemMaster
+BaseEquitySecurity
+BaseExchangeRates
+BaseFoundationCompanyDaily
+BaseSecurity
 
 Universal Identifiers:
 companyId, tradingItemId, securityId
