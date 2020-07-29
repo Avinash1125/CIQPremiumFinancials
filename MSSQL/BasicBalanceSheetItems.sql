@@ -12,10 +12,19 @@ BaseFoundationCompanyDaily
 BaseSecurity
 
 Universal Identifiers:
-companyId, tradingItemId, securityId
+companyId
+tradingItemId
+securityId
 
 Primary Columns Used:
-companyid, securityId, tradingItemId, dataItemId, financialCollectionId, financialInstanceId, financialPeriodId, periodTypeId
+companyid
+securityId
+tradingItemId
+dataItemId
+financialCollectionId
+financialInstanceId
+financialPeriodId
+periodTypeId
 
 Database_Type:
 MSSQL
