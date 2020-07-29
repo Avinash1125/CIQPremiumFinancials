@@ -1,19 +1,14 @@
-/***********************************************************************
-TEV/EBITDA time series
+/***********************************************************************************************
+Tev/ebitda Time Series
 
 Packages Required:
-Finl Premium Core
-Finl Premium Detail
-Market Capitalization
+Finl Premium Core, Finl Premium Detail, Market Capitalization
 
 Universal Identifiers:
 companyId
 
 Primary Columns Used:
-dataItemId
-financialCollectionId
-financialInstanceId
-financialPeriodId
+dataItemId, financialCollectionId, financialInstanceId, financialPeriodId
 
 Database_Type:
 MSSQL
@@ -22,15 +17,16 @@ Query_Version:
 V1
 
 Query_Added_Date:
-25\05\2020
+25/05/2020
 
 DatasetKey:
 10
 
-Calculates a quarterly time series of TEV/EBITDA by joining pricing 
-date to period end date
+Calculates a quarterly time series of TEVEBITDA by joining pricing  date to period end date
 
-***********************************************************************/  
+***********************************************************************************************/
+
+ 
 
 DECLARE @CompanyID AS INT   
 DECLARE @StrtDate AS DATE   
@@ -82,4 +78,4 @@ SELECT p.pricingDate
 ,p.TEV/i.dataitemvalue 'TEV / LTM EBITDA'    
 FROM #1 i   
 join #2 p ON p.pricingdate = i.periodenddate     
-ORDER BY p.pricingDate DESC 
+ORDER BY p.pricingDate DESC
