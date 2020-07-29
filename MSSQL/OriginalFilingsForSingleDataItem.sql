@@ -1,21 +1,14 @@
-/************************************************************************************************
-View the original filings for a single data item
+/***********************************************************************************************
+Returns The Original Filings For A Single Data Item
 
 Packages Required:
-Finl Premium Core
-Finl Premium Detail
-Finl Premium Statement
+Finl Premium Core, Finl Premium Detail, Finl Premium Statement
 
 Universal Identifiers:
 companyId
 
 Primary Columns Used:
-dataItemId
-financialCollectionId
-financialInstanceId
-financialPeriodId
-periodTypeId
-restatementTypeId
+dataItemId, financialCollectionId, financialInstanceId, financialPeriodId, periodTypeId, restatementTypeId
 
 Database_Type:
 MSSQL
@@ -24,15 +17,15 @@ Query_Version:
 V1
 
 Query_Added_Date:
-25\05\2020
+25/05/2020
 
 DatasetKey:
 10
 
-The following sample SQL query displays the original filings for a single data item 
-for a given company
+The following sample SQL query displays the original filings for a single data item  for a given company
 
 ***********************************************************************************************/
+
 
 SELECT fp.companyID
 ,fp.financialPeriodID
