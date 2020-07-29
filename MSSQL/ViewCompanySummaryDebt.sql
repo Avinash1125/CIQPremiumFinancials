@@ -2,7 +2,12 @@
 Returns Summary Debt Information For A Company
 
 Packages Required:
-Finl Premium Core, Finl Premium Detail, Finl Premium Statement, Finl Premium Capital Structure, Base Company, Base Data Item Master
+FinlPremiumCore
+FinlPremiumDetail
+FinlPremiumStatement
+FinlPremiumCapitalStructure
+BaseCompany
+BaseDataItemMaster
 
 Universal Identifiers:
 companyId
