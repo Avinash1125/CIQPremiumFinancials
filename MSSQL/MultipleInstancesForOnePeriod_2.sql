@@ -1,23 +1,14 @@
-/************************************************************************************************
-Display multiple instances for one period
+/***********************************************************************************************
+Returns Multiple Instances For One Period(annual)
 
 Packages Required:
-Finl Premium Core
-Finl Premium Detail
-Finl Premium Statement
+Finl Premium Core, Finl Premium Detail, Finl Premium Statement
 
 Universal Identifiers:
-companyId
-tradingItemId
-securityId
+companyId, tradingItemId, securityId
 
 Primary Columns Used:
-dataItemId
-financialCollectionId
-financialInstanceId
-financialPeriodId
-periodTypeId
-restatementTypeId
+dataItemId, financialCollectionId, financialInstanceId, financialPeriodId, periodTypeId, restatementTypeId
 
 Database_Type:
 MSSQL
@@ -26,24 +17,15 @@ Query_Version:
 V1
 
 Query_Added_Date:
-25\05\2020
+25/05/2020
 
 DatasetKey:
 10
 
-The latestFilingForInstanceFlag is used when there are multiple records in the ciqFinInstance 
-table that have the same financialPeriodId and the same filingDate.This would occur, for 
-example, when a company filed its press release and its 10-Q on the same day. The 
-latestFilingForInstanceFlag flag shows you the “best” instance to use if you are trying to 
-select between these two instances. A flag indicating that this instance is the latest one 
-for the financial period. If there are multiple instances, 1=the latest filing that exists for 
-the financial period and 0= other instances. instanceTypeId=4 (Backward column of a press 
-release) are excluded from consideration if instanceTypeIds of 2 or 3 exist (Original Instance 
-or Encore) for that financial period, as this would be replacing a complete source (e.g., an 
-SEC filing) with an incomplete source (e.g., a press release), To view the latest/best source 
-for a company, always screen for latestForFinancialPeriodFlag=1.
+The latestFilingForInstanceFlag is used when there are multiple records in the ciqFinInstance  table that have the same financialPeriodId and the same filingDate.This would occur, for  example, when a company filed its press release and its 10-Q on the same day. The  latestFilingForInstanceFlag flag shows you the \\xe2\\x80\\x9cbest\\xe2\\x80\\x9d instance to use if you are trying to  select between these two instances. A flag indicating that this instance is the latest one  for the financial period. If there are multiple instances, 1=the latest filing that exists for  the financial period and 0= other instances. instanceTypeId=4 (Backward column of a press  release) are excluded from consideration if instanceTypeIds of 2 or 3 exist (Original Instance  or Encore) for that financial period, as this would be replacing a complete source (e.g., an  SEC filing) with an incomplete source (e.g., a press release), To view the latestbest source  for a company, always screen for latestForFinancialPeriodFlag=1
 
 ***********************************************************************************************/
+
 
 SELECT c.companyName, c.companyId, fp.financialPeriodId, fi.periodEndDate,fi.filingDate, pt.periodTypeName, fp.calendarQuarter, fp.calendarYear,di.dataItemName,fd.dataItemValue,
 fi.latestFilingForInstanceFlag, fi.latestForFinancialPeriodFlag, rt.restatementTypeName, fi.formType,exchangeSymbol
