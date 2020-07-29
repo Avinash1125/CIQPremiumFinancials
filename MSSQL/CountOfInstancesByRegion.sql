@@ -2,8 +2,7 @@
 Number Of Quarterly Instances By Region Using Dynamic Pivot
 
 Packages Required:
-BaseFoundationCompanyDaily
-FinlPremiumCore
+BaseFoundationCompanyDaily*/#FinlPremiumCore
 
 Universal Identifiers:
 companyId
