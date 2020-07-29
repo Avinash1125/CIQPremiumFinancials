@@ -2,7 +2,11 @@
 PoinT-IN-Time Sample Query Which Returnss The Average Lag For Us Companies
 
 Packages Required:
-Financial Premium Intraday Core, Finl Latest Core, Finl Premium Core, Base Company, Base Foundation Company Daily
+FinancialPremiumIntradayCore
+FinlLatestCore
+FinlPremiumCore
+BaseCompany
+BaseFoundationCompanyDaily
 
 Universal Identifiers:
 companyId
