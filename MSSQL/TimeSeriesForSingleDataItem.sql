@@ -1,21 +1,14 @@
-/************************************************************************************************
-View a time series for a single data item
+/***********************************************************************************************
+Returns A Time Series For A Single Data Item
 
 Packages Required:
-Finl Premium Core
-Finl Premium Detail
-Finl Premium Statement
-
+Finl Premium Core, Finl Premium Detail, Finl Premium Statement
 
 Universal Identifiers:
 companyId
 
 Primary Columns Used:
-dataItemId
-financialCollectionId
-financialInstanceId
-financialPeriodId
-periodTypeId
+dataItemId, financialCollectionId, financialInstanceId, financialPeriodId, periodTypeId
 
 Database_Type:
 MSSQL
@@ -24,14 +17,15 @@ Query_Version:
 V1
 
 Query_Added_Date:
-25\05\2020
+25/05/2020
 
 DatasetKey:
 10
 
-The following sample SQL query displays a time series for a single data item for a company.
+The following sample SQL query displays a time series for a single data item for a company
 
 ***********************************************************************************************/
+
 
 SELECT fp.companyID
 ,fp.financialPeriodID
@@ -59,4 +53,3 @@ AND fi.latestForFinancialPeriodFlag = 1 --latest instance
 AND fcd.dataItemID = 15 --net income
 
 ORDER BY fp.companyID,fp.fiscalYear,fp.fiscalQuarter, fi.financialInstanceID,fc.financialCollectionID
- 
