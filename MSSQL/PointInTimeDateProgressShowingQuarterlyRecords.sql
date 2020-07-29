@@ -2,7 +2,10 @@
 PoinT-IN-Time Date Progress Showing Quarterly Records
 
 Packages Required:
-Finl Premium Core, Finl Premium Instance Date, Base Company, Basre Foundation Company Daily
+FinlPremiumCore
+FinlPremiumInstanceDate
+BaseCompany
+BasreFoundationCompanyDaily
 
 Universal Identifiers:
 companyId
