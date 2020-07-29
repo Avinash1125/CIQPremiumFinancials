@@ -1,21 +1,14 @@
-/************************************************************************************************
-Point-in-time date progress showing quarterly records
+/***********************************************************************************************
+PoinT-IN-Time Date Progress Showing Quarterly Records
 
 Packages Required:
-Finl Premium Core
-Finl Premium Instance Date
-Base Company
-Basre Foundation Company Daily
+Finl Premium Core, Finl Premium Instance Date, Base Company, Basre Foundation Company Daily
 
 Universal Identifiers:
 companyId
 
 Primary Columns Used:
-financialInstanceId
-financialPeriodId
-instanceDateTypeId
-periodtypeId
-restatementTypeId
+financialInstanceId, financialPeriodId, instanceDateTypeId, periodtypeId, restatementTypeId
 
 Database_Type:
 MSSQL
@@ -24,15 +17,15 @@ Query_Version:
 V1
 
 Query_Added_Date:
-25\05\2020
+25/05/2020
 
 DatasetKey:
 10
 
-The following sample SQL query uses the Premium Financials Instance Date package to display
-Apple's filing vs. point-in-time date progression.
+The following sample SQL query uses the Premium Financials Instance Date package to display Apple\'s filing vs. point-in-time date progression."]
 
 ***********************************************************************************************/
+
 
 WITH PIT AS
 (
@@ -54,11 +47,10 @@ JOIN ciqPeriodType pt (nolock) ON p.periodTypeId = pt.periodTypeId
 JOIN ciqCompany c (nolock) ON p.companyId = c.companyId
 
 WHERE c.companyId = 24937 -- AAPL
---and b.formType = '10-Q'
-AND rt.restatementTypeName = 'Press Release'
---and rt.restatementTypeName = 'Original'
---and pt.periodTypeName = 'Quarterly'
+--and b.formType = \'10-Q\'
+AND rt.restatementTypeName = \'Press Release\'
+--and rt.restatementTypeName = \'Original\'
+--and pt.periodTypeName = \'Quarterly\'
 AND pt.periodTypeId IN (1,2)
-AND b.periodEndDate >= '2009-01-01'
+AND b.periodEndDate >= \'2009-01-01\'
 ORDER BY b.periodEndDate DESC,b.filingDate DESC
- 
