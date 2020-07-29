@@ -10,10 +10,16 @@ BaseCompany
 BaseCompanyFoundationDaily
 
 Universal Identifiers:
-companyId, GVKEY
+companyId
+GVKEY
 
 Primary Columns Used:
-dataItemId, financialCollectionId, financialInstanceId, financialPeriodId, periodTypeId, restatementTypeId
+dataItemId
+financialCollectionId
+financialInstanceId
+financialPeriodId
+periodTypeId
+restatementTypeId
 
 Database_Type:
 MSSQL
