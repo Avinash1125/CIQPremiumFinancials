@@ -2,7 +2,9 @@
 Total Company Shares Outstanding On A Specific Date
 
 Packages Required:
-Finl Capital Structure Equity, Base Equity Security, Base Security
+FinlCapitalStructureEquity
+BaseEquitySecurity
+BaseSecurity
 
 Universal Identifiers:
 companyId
