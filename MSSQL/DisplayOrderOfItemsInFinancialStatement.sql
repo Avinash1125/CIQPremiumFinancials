@@ -1,24 +1,14 @@
-/************************************************************************************************
-Display the order of items in a financial statement
+/***********************************************************************************************
+Returns The Order Of Items In A Financial Statement
 
 Packages Required:
-Finl Premium Core
-Finl Premium Detail
-Finl Premium Statement
-Finl Premium Segment Financials
-Base Data Item Master
+Finl Premium Core, Finl Premium Detail, Finl Premium Statement, Finl Premium Segment Financials, Base Data Item Master
 
 Universal Identifiers:
 companyId
 
 Primary Columns Used:
-dataCollectionTypeId
-dataItemId
-financialCollectionId
-financialInstanceId
-financialPeriodId
-periodTypeId
-reportingTemplateId
+dataCollectionTypeId, dataItemId, financialCollectionId, financialInstanceId, financialPeriodId, periodTypeId, reportingTemplateId
 
 Database_Type:
 MSSQL
@@ -27,15 +17,15 @@ Query_Version:
 V1
 
 Query_Added_Date:
-25\05\2020
+25/05/2020
 
 DatasetKey:
 10
 
-The following sample SQL query displays the order of Items in an Income Statement. The 
-description corresponding to the reportingTemplateId is provided within the query.
+The following sample SQL query displays the order of Items in an Income Statement. The  description corresponding to the reportingTemplateId is provided within the query
 
 ***********************************************************************************************/
+
 
 SELECT fp.fiscalYear, di.dataItemId, di.dataItemName, fd.dataitemvalue, c.dataCollectionTypeName,
 CASE find.reportingTemplateId
@@ -70,4 +60,3 @@ AND fi.latestFilingForInstanceFlag=1
 AND fi.latestForFinancialPeriodFlag=1
 
 ORDER BY lineOrder
- 
