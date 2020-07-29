@@ -14,7 +14,7 @@ Database_Type:
 MSSQL
 
 Query_Version:
-V1asd
+V1
 
 Query_Added_Date:
 25/05/2020
