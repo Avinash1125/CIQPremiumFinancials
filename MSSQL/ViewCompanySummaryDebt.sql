@@ -1,23 +1,14 @@
-/************************************************************************************************
-View summary debt information for a company
+/***********************************************************************************************
+Returns Summary Debt Information For A Company
 
 Packages Required:
-Finl Premium Core
-Finl Premium Detail
-Finl Premium Statement
-Finl Premium Capital Structure
-Base Company
-Base Data Item Master
+Finl Premium Core, Finl Premium Detail, Finl Premium Statement, Finl Premium Capital Structure, Base Company, Base Data Item Master
 
 Universal Identifiers:
 companyId
 
 Primary Columns Used:
-dataItemId
-financialCollectionId
-financialInstanceId
-financialPeriodId
-instanceTypeId
+dataItemId, financialCollectionId, financialInstanceId, financialPeriodId, instanceTypeId
 
 Database_Type:
 MSSQL
@@ -26,16 +17,15 @@ Query_Version:
 V1
 
 Query_Added_Date:
-25\05\2020
+25/05/2020
 
 DatasetKey:
 10
 
-The following sample SQL query demonstrates how to view summary debt information for IBM over a 10-year period.
-Note: This sample query is for the Capital Structure Add-On delivered through the 
-ciqFinCollectionData table in the Premium Financials Core Package.
+The following sample SQL query demonstrates how to view summary debt information for IBM over a 10-year period. Note: This sample query is for the Capital Structure Add-On delivered through the  ciqFinCollectionData table in the Premium Financials Core Package
 
 ***********************************************************************************************/
+
 
 SELECT * FROM 
  
