@@ -2,14 +2,7 @@
 Returns A Time Series
 
 Packages Required:
-FinlPremiumCore
-FinlPremiumDetail
-FinlPremiumStatement
-BaseCompany
-BaseDataItemMaster
-BaseEquitySecurity
-BaseFoundationCompanyDaily
-BaseSecurity
+FinlPremiumCore*/#FinlPremiumDetail*/#FinlPremiumStatement*/#BaseCompany*/#BaseDataItemMaster*/#BaseEquitySecurity*/#BaseFoundationCompanyDaily*/#BaseSecurity
 
 Universal Identifiers:
 companyId, tradingItemId, securityId
