@@ -2,14 +2,14 @@
 Returns The Sources, Values And Filing Dates
 
 Packages Required:
-FinlPremiumCore
-FinlPremiumDetail
-FinlPremiumStatement
-BaseCompany
-BaseDataItemMaster
-BaseEquitySecurity
-BaseFoundationCompanyDaily
-BaseSecurity
+Finl Premium Core
+Finl Premium Detail
+Finl Premium Statement
+Base Company
+Base Data Item Master
+Base Equity Security
+Base Foundation Company Daily
+Base Security
 
 Universal Identifiers:
 companyId
@@ -74,3 +74,4 @@ AND e.exchangeSymbol = 'TSE'
 AND ti.tickerSymbol = '7267' --Honda Motor Company
 AND fi.periodEndDate = '3/31/2007'  
 ORDER BY fi.filingDate
+ 
