@@ -1,10 +1,10 @@
 /***********************************************************************************************
-Tev/ebitda Time Series
+TEV/EBITDA Time Series
 
 Packages Required:
-FinlPremiumCore
-FinlPremiumDetail
-MarketCapitalization
+Finl Premium Core
+Finl Premium Detail
+Market Capitalization
 
 Universal Identifiers:
 companyId
